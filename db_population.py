@@ -32,9 +32,9 @@ session.add(user3)
 
 
 # Add 2 channels
-channel1 = Channel(channel_name='The JP Report', owner_id=user1.id, start_date=date(2018, 7, 27),
+channel1 = Channel(channel_name='The JP Report', owner=user1, start_date=date(2018, 7, 27),
                    description='This is a channel for any news, on any thing')
-channel2 = Channel(channel_name='The Michelley Report', owner_id=user2.id, start_date=date(2018, 7, 18),
+channel2 = Channel(channel_name='The Michelley Report', owner=user2, start_date=date(2018, 7, 18),
                    description='This is the news Channel of Michelley welly')
 session.add(channel1)
 session.add(channel2)
@@ -42,19 +42,19 @@ session.commit()
 #channel1 = Channel(channel_name = 'The JP Report', owner=user1, start_date=date(2018, 7, 27), description='This is a channel for any news, on any thing')
 #channel1 = Channel(channel_name = 'The JP Report', owner=user1, start_date=date(2018, 7, 27), description='This is a channel for any news, on any thing')
 # Then add 5 articles
-article1 = Article(title='JP becomes richest main man', channel_id=channel1.id, description='Update on the rich list',
+article1 = Article(title='JP becomes richest main man', channel=channel1, description='Update on the rich list',
                    article_text='This is all the article text, man', date=date(2018, 6, 8))
 
-article2 = Article(title='JP gets a job', channel_id=channel1.id, description='Finally, he\'s bringing in some cash!',
+article2 = Article(title='JP gets a job', channel=channel1, description='Finally, he\'s bringing in some cash!',
                    article_text='Wow, so JP is this guy, who has been thinking about coding for a loooong time, and he is quite good in some ways, but..',
                    date=date(2018, 6, 8))
 
-article3 = Article(title='Mich out of night shift!', channel_id=channel2.id, description='Update on having to work at night!',
+article3 = Article(title='Mich out of night shift!', channel=channel2, description='Update on having to work at night!',
                    article_text='This is such a huge relief, we can now finally start looking forward with our life!', date=date(2018, 6, 22))
 
-article4 = Article(title='Michelley makes Schone gifting', channel_id=channel2.id, description='Focus on new gifting startup',
+article4 = Article(title='Michelley makes Schone gifting', channel=channel2, description='Focus on new gifting startup',
                    article_text='This is all the article text, man', date=date(2018, 2, 8))
-article5 = Article(title='Starting a new country', channel_id=channel1.id, description='People are worried, and they should be',
+article5 = Article(title='Starting a new country', channel=channel1, description='People are worried, and they should be',
                    article_text='This is all the article text, man', date=date(2015, 6, 8))
 
 session.add(article1)
